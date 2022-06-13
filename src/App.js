@@ -1,12 +1,13 @@
 import { useState } from "react";
 import {
   ConnectWalletButton,
-  useConnectedWallet,
   WalletKitProvider,
 } from "@gokiprotocol/walletkit";
+import { UpdateSection } from "./components/UpdateSection/UpdateSection";
 
 function App() {
   const [selected, setSelected] = useState("");
+
 
   const connectWallet = async () => {
     if (window.ethereum) {
@@ -31,7 +32,7 @@ function App() {
           />
         ),
       }}
-      debugMode={false}
+      debugMode={true}
     >
       <div style={{ textAlign: "center" }}>
         <h1>Solana Migrator</h1>
@@ -52,6 +53,7 @@ function App() {
         ) : (
           <button onClick={async () => await connectWallet()}>Connect</button>
         )}
+        <UpdateSection></UpdateSection>
       </div>
     </WalletKitProvider>
   );
