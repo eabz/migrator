@@ -22,42 +22,28 @@ export const UpdateSection = () => {
     useEffect(() => {
       void refetchSOL();
     }, [refetchSOL]);
+
+    const updateInfo = () => {
+        console.log("here!")
+    }
   
     return (
       <AppWrapper>
-        <h1>
-          WalletKit
-        </h1>
-        <p
-          css={css`
-            margin: 0;
-            margin-bottom: 48px;
-          `}
-        >
-          A wallet connector for Solana dApps.
-        </p>
-
         {wallet ? (
           <WalletInfo>
             <h3>You will be linking the following wallets</h3>
             <ul>
-              <li>Wallet key: {wallet?.publicKey?.toString()}</li>
-              <li>Provider: {walletProviderInfo?.name}</li>
-              <li>Network: {network}</li>
-              <li>
-                Balance:{" "}
-                {typeof balance === "number"
-                  ? `${(balance / LAMPORTS_PER_SOL).toLocaleString()} SOL`
-                  : "--"}
-              </li>
+              <li>{wallet?.publicKey?.toString()} Solana</li>
+              <li>Ethereum</li>
             </ul>
             <Buttons>
-              <Button onClick={() => void disconnect()}>Disconnect</Button>
+              {/* <Button onClick={() => void disconnect()}>Disconnect</Button> */}
+              <Button onClick={updateInfo}>Update Info</Button>
             </Buttons>
           </WalletInfo>
         ) : (
           <WalletInfo>
-            <p>Connect a wallet above.</p>
+            <p>Link Wallets.</p>
           </WalletInfo>
         )}
       </AppWrapper>
