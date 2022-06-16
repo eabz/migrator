@@ -16,7 +16,7 @@ function App() {
       });
       setSelected(window.ethereum.selectedAddress);
     } else {
-      alert("Please install Mask");
+      alert("Please install MetaMask");
     }
   };
 
@@ -47,7 +47,7 @@ function App() {
           <>
             <p>{selected}</p>
             <button onClick={async () => await connectWallet()}>
-              Change address
+              Change Address
             </button>
           </>
         ) : (

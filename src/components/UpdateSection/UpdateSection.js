@@ -3,10 +3,7 @@ import styled from "@emotion/styled";
 import { ConnectWalletButton } from "@gokiprotocol/walletkit";
 import { PendingTransaction } from "@saberhq/solana-contrib";
 import { useConnectedWallet, useSolana } from "@saberhq/use-solana";
-import { Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useCallback, useEffect, useState } from "react";
-import invariant from "tiny-invariant";
-
 export const UpdateSection = () => {
     const { walletProviderInfo, disconnect, providerMut, network, setNetwork } =
       useSolana();
@@ -43,7 +40,7 @@ export const UpdateSection = () => {
           </WalletInfo>
         ) : (
           <WalletInfo>
-            <p>Link Wallets.</p>
+            <p>Link Wallets</p>
           </WalletInfo>
         )}
       </AppWrapper>
