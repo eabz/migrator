@@ -5,7 +5,8 @@
   "scripts": {
     "build": "craco build",
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
-    "start": "craco start"
+    "start": "craco start",
+    "server": "node src/server.js"
   },
   "browserslist": {
     "production": [
