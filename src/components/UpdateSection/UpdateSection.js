@@ -4,6 +4,7 @@ import { ConnectWalletButton } from "@gokiprotocol/walletkit";
 import { PendingTransaction } from "@saberhq/solana-contrib";
 import { useConnectedWallet, useSolana } from "@saberhq/use-solana";
 import { useCallback, useEffect, useState } from "react";
+import Axios from 'axios';
 export const UpdateSection = () => {
     const { walletProviderInfo, disconnect, providerMut, network, setNetwork } =
       useSolana();

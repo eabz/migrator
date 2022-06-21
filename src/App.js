@@ -4,6 +4,7 @@ import {
   WalletKitProvider,
 } from "@gokiprotocol/walletkit";
 import { UpdateSection } from "./components/UpdateSection/UpdateSection";
+import logo from './Images/Logo.png'
 
 function App() {
   const [selected, setSelected] = useState("");
@@ -34,6 +35,9 @@ function App() {
       }}
       debugMode={true}
     >
+      <div>
+          <img src={logo} style={{ width:"5%", padding:"6px"}}/>
+        </div>
       <div style={{ textAlign: "center" }}>
         <h1>Solana Migrator</h1>
         <p>Connect Solana wallet</p>
